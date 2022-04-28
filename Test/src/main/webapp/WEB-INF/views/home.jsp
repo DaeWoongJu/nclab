@@ -12,5 +12,6 @@
 	<li><a href="${pageContext.request.contextPath }/gongi/insert">글등록</a></li>
 	<li><a href="${pageContext.request.contextPath }/gongi/list?pageNum=1">글목록</a></li>
 </ul>
+cc
 </body>
 </html>
