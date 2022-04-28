@@ -17,11 +17,10 @@ import ju.dae.woong.vo.GongiVo;
 @Controller
 public class ListController {
 	@Autowired private GongiService service;
-	@PostMapping("/gongi/list")
-	public String listForm(Model model) {
-		model.addAttribute("/WEB-INF/views/gongi/list.jsp");
-		return "layout";
-	}
+	/*
+	 * @PostMapping("/gongi/list") public String listForm(Model model) {
+	 * model.addAttribute("/WEB-INF/views/gongi/list.jsp"); return "layout"; }
+	 */
 	
 	@RequestMapping("/gongi/list")
 	public String list(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,String field,String keyword,Model model) {
