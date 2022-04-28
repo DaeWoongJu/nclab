@@ -30,7 +30,7 @@ public class ListController {
 		map.put("keyword", keyword);
 		
 		int totalRowCount=service.getCount(map);
-		PageUtil pu=new PageUtil(pageNum, 6, 5, totalRowCount);
+		PageUtil pu=new PageUtil(pageNum, 10, 5, totalRowCount);
 		int startRow=pu.getStartRow();
 		int endRow=pu.getEndRow();
 		map.put("startRow", startRow);
