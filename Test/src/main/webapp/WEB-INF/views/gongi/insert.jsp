@@ -82,7 +82,7 @@
 				let images = document.getElementById("images");
 				images.src = e.target.result;
 				images.style.display = 'block';
-			}
+			} 
 			reader.readAsDataURL(e.target.files[0]);
 		}
 </script>
