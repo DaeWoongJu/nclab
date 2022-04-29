@@ -2,40 +2,48 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="data.mybatis.mapper.GongiMapper">
-     <insert id="insert" parameterType="ju.dae.woong.vo.GongiVo">
-     	insert into gongi
-     	values(gongi_seq.nextval,#{writer},#{title},#{content},sysdate,#{pwd})
-     </insert>
-      <sql id="search">
-     	<if test="field!=null and field!='' and field!='all' " >
-     		where ${field} like '%'||#{keyword}||'%'
-     	</if>
-     	<if test="field=='all' " >
-     		where title like '%'||#{keyword}||'%' or content like '%'||#{keyword}||'%'
-     	</if>
-     </sql>
-  	<select id="list" parameterType="hashmap" resultType="ju.dae.woong.vo.GongiVo">
-  		select * from
+  
+<mapper namespace="data.mybatis.mapper.GongiMapper">
+
+	<insert id="insert" parameterType="ju.dae.woong.vo.GongiVo">
+		insert into gongi
+		values(gongi_seq.nextval, #{id}, #{title}, #{content}, #{images}, sysdate, #{pwd})
+	</insert>
+	
+	<sql id="search">
+		<if test="field!=null and field!='' and field!='all' ">
+			where ${field} like '%'||#{keyword}||'%'
+		</if>
+		<if test="field=='all' ">
+			where title like '%'||#{keyword}||'%' or content like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="list" parameterType="hashmap"
+		resultType="ju.dae.woong.vo.GongiVo">
+		select * from
 		(
-		    select b.*,rownum rnum
-		    from (
-		        select * from gongi
-		        <include refid="search"/>
-		        order by num desc
-		    )b
+		select b.*,rownum rnum
+		from (
+				select * from gongi
+				<include refid="search" />
+				order by num desc
+				)b
 		) 
-		<![CDATA[where rnum>=#{startRow} and rnum<=#{endRow}]]>	
-  	</select>
-  	<!-- 전체글갯수구하는쿼리 -->
-  	<select id="count" resultType="int" parameterType="hashmap">
-  		select NVL(count(*),0) cnt from gongi   
-  		<include refid="search"/>
-  	</select>
-  	<delete id="delete" parameterType="int">
-  		delete from gongi where num=#{num}
-  	</delete>
- </mapper>
+		<![CDATA[where rnum>=#{startRow} and rnum<=#{endRow}]]>
+	</select>
+	
+	<!-- 전체글갯수구하는쿼리 -->
+	<select id="count" resultType="int" parameterType="hashmap">
+		select NVL(count(*),0) cnt from gongi
+		<include refid="search" />
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete from gongi where num=#{num}
+	</delete>
+	
+</mapper>
  
  
  

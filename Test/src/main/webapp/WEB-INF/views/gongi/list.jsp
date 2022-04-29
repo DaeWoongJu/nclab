@@ -11,17 +11,17 @@
 </style>
 <div id="div1" >
 <ul>
-	<li><a href="${pageContext.request.contextPath }/">홈으로</a></li>
-	<li><a href="${pageContext.request.contextPath }/gongi/insert">글등록</a></li>
-	<li><a href="${pageContext.request.contextPath }/gongi/list?pageNum=1">글목록</a></li>
+	<li><a href="${cp }/">홈으로</a></li>
+	<li><a href="${cp }/gongi/insert">글등록</a></li>
+	<li><a href="${cp }/gongi/list?pageNum=1">글목록</a></li>
 </ul>
 </div>
 </head>
 <body>
 <div style="background-color: #D6E5FA; width: 500px;height: 500px">
 <h1 >게시판</h1>
-<a href="${pageContext.request.contextPath }/gongi/list">전체글목록</a>
-<a href="${pageContext.request.contextPath }/">홈으로</a><br><br>
+<a href="${cp }/gongi/list">전체글목록</a>
+<a href="${cp }/">홈으로</a><br><br>
 <table border="1" width="500">
 	<tr>
 		<th>글번호</th>
@@ -36,12 +36,12 @@
 			<td>${vo.writer }</td>
 			<td>${vo.content }</td>
 			<td>${vo.title }</td>
-			<td><a href="${pageContext.request.contextPath }/gongi/delete?num=${vo.num}">삭제</a></td>
+			<td><a href="${cp }/gongi/delete?num=${vo.num}">삭제</a></td>
 		</tr>
 	</c:forEach>
 </table>
 <div>
-	<c:set var="cp" value="${pageContext.request.contextPath }" />
+	<c:set var="cp" value="${cp }" />
 	<c:forEach var="i" begin="${pu.startPageNum }" end="${pu.endPageNum }">
 		<c:choose>
 			<c:when test="${i==param.pageNum }">

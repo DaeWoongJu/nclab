@@ -13,9 +13,9 @@ import lombok.ToString;
 
 public class GongiVo {
 	private int num;
-	private String writer;
+	private String id;
 	private String title;
 	private String content;
 	private Date regdate;
-	private String pwd;
+	private String images;
 }
