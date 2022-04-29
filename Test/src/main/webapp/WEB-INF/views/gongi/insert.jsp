@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>글작성</h1>
-<form action="" method="post" enctype="multipart/form-data">
+<!-- <form action="" method="post" enctype="multipart/form-data">
 	작성자&nbsp;&nbsp; <input type="text" name="id"><br>
 	제목&nbsp;&nbsp; <input type="text" name="title"><br>
 	내용<br>
@@ -19,15 +19,27 @@
 			<label>상품 이미지</label>
 		</div>
 		<div class="form_section_content">
-			<input type="file" id="fileImage" name="images">
+			<input type="file" id="images" name="images">
 		</div>
 	</div>
 
 	<input type="submit" value="등록"><br>
+</form> -->
+<form method="post" action="" enctype="multipart/form-data">
+	작성자<br>
+	<input type="text" name="id"><br>
+	제목<br>
+	<input type="text" name="title"><br>
+	내용<br>
+	<textarea rows="5" cols="50" name="content"></textarea><br>
+	첨부파일<br>
+	<input type="file" name="images" onchange="imageView(event)"><br>
+	<img style="width: 200px; height: 200px; display: none; margin-top: 5px;" id="images" src=""> 
+	<input type="submit" value="확인">
 </form>
 
 <script type="text/javascript">
-
+/* 
 	$("input[type='file']").on("change", function(e){
 		
 		let formData = new FormData();
@@ -63,7 +75,16 @@
 		}
 		return true;
 	}
-	
+	 */
+	 function imageView(e) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				let images = document.getElementById("images");
+				images.src = e.target.result;
+				images.style.display = 'block';
+			}
+			reader.readAsDataURL(e.target.files[0]);
+		}
 </script>
 </body>
 </html>

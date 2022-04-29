@@ -15,6 +15,8 @@ public class GongiDao {
 		this.sqlSession = sqlSession;
 	}
 	public int insert(GongiVo vo) {
+		System.out.println(vo+"aa");
+		System.out.println(vo.getImages()+"bb");
 		return sqlSession.insert(NAMESPACE+".insert",vo);
 	}
 	public List<GongiVo> selectList(HashMap<String, Object> map){

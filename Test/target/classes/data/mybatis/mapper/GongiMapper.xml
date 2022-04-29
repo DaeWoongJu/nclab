@@ -7,7 +7,7 @@
 
 	<insert id="insert" parameterType="ju.dae.woong.vo.GongiVo">
 		insert into gongi
-		values(gongi_seq.nextval, #{id}, #{title}, #{content}, #{images}, sysdate, #{pwd})
+		values(gongi_seq.nextval, #{id}, #{images}, #{title}, #{content}, sysdate)
 	</insert>
 	
 	<sql id="search">
