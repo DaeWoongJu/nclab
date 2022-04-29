@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet">
  <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -141,12 +144,9 @@ body {
 
 </style>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
+<h2 style="font-family: 'Water Brush', cursive;">N-CLAB</h2>
 <body>
-<div id=siteName>
-	<h1>N-CLAB</h1>
-</div>
 <%-- <div id="headerLoginMenu">
 	<ul>
 		<li><a href="${cp }/">HOME</a></li>
@@ -155,11 +155,11 @@ body {
 	</ul>
 </div> --%>
 <nav class="menu open_menu">&equiv;
-	<a class="nav-item" title='Home' href="${cp }/">🏠&#xFE0E;</a>
-	<a class="nav-item" title='Search' href="${cp }/gongi/insert">🔎︎&#xFE0E;</a>
-	<a class="nav-item" title='Notifications' href="#">🔔&#xFE0E;</a>
-	<a class="nav-item" title='Favorites' href="#">❤&#xFE0E;</a>
-	<a class="nav-item" title='Profile' href="#">👤&#xFE0E;</a>
+	<a class="nav-item" title='Home!!' href="${cp }/">🏠&#xFE0E;</a>
+	<a class="nav-item" title='회원가입!!' href="${cp }/gongi/insert">🔎︎&#xFE0E;</a>
+	<a class="nav-item" title='글등록!!' href="${cp }/gongi/insert">🔔&#xFE0E;</a>
+	<a class="nav-item" title='로그인!!' href="#">❤&#xFE0E;</a>
+	<a class="nav-item" title='마이페이지!!' href="#">👤&#xFE0E;</a>
 </nav>
 </body>
 <script type="text/javascript">
