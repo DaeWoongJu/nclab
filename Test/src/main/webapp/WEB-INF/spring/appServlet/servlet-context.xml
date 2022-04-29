@@ -22,8 +22,10 @@
 	</beans:bean>
 	
 	<!-- 업로드 관련 빈 -->
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
-	
+	<beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대업로드 크기 지정 -->
+		<beans:property name="maxUploadSize" value="5242880"/>
+	</beans:bean>
 	<context:component-scan base-package="ju.dae.woong.controller" />
 	
 	

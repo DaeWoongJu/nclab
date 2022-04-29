@@ -158,7 +158,7 @@ body {
 	<a class="nav-item" title='Home!!' href="${cp }/">🏠&#xFE0E;</a>
 	<a class="nav-item" title='회원가입!!' href="${cp }/gongi/insert">🔎︎&#xFE0E;</a>
 	<a class="nav-item" title='글등록!!' href="${cp }/gongi/insert">🔔&#xFE0E;</a>
-	<a class="nav-item" title='로그인!!' href="#">❤&#xFE0E;</a>
+	<a class="nav-item" title='로그인!!' href="${cp }/game">❤&#xFE0E;</a>
 	<a class="nav-item" title='마이페이지!!' href="#">👤&#xFE0E;</a>
 </nav>
 </body>

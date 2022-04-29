@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+결과코드 ${code }<br>
 <c:choose>
 	<c:when test="${result=='success' }">
 		성공!
